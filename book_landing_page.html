@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מסע אל עצמך – לרכישת הספר</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and base styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Alef', sans-serif; line-height: 1.6; color: #333; background-color: #f7f7f7; }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; }
+
+    /* Container */
+    .container { width: 90%; max-width: 1200px; margin: auto; }
+
+    /* Hero Section */
+    #hero {
+      background: url('open_book.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+    #hero::after {
+      content: "";
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    #hero .content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: auto;
+    }
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    #hero .cta-button {
+      display: inline-block;
+      background-color: #ff9a00;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+    }
+    #hero .cta-button:hover {
+      background-color: #e58900;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      background-color: #fff;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #ff9a00;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .feature {
+      flex: 1 1 45%;
+      background-color: #fdf6e3;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .feature h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .feature p {
+      font-size: 1rem;
+    }
+
+    /* About Section */
+    .about {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .about img {
+      border-radius: 8px;
+      width: 100%;
+    }
+    .about .text {
+      font-size: 1rem;
+    }
+    @media(min-width: 768px) {
+      .about {
+        flex-direction: row;
+      }
+      .about .text, .about img {
+        flex: 1;
+      }
+    }
+
+    /* Video Section */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .testimonial {
+      background-color: #fdf6e3;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .testimonial span {
+      font-weight: bold;
+      color: #ff9a00;
+    }
+
+    /* Pricing Section */
+    .pricing {
+      text-align: center;
+    }
+    .price {
+      font-size: 2.5rem;
+      color: #ff9a00;
+      margin: 20px 0;
+    }
+    .benefits {
+      list-style: none;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: right;
+    }
+    .benefits li {
+      margin-bottom: 10px;
+      padding-right: 30px;
+      position: relative;
+    }
+    .benefits li::before {
+      content: '✔';
+      position: absolute;
+      right: 0;
+      color: #ff9a00;
+    }
+    .payment-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .payment-buttons a {
+      background-color: #ff9a00;
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+    .payment-buttons a:hover {
+      background-color: #e58900;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #333;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    footer a { color: #ff9a00; }
+  </style>
+</head>
+<body>
+  <header id="hero">
+    <div class="content">
+      <h1>מסע אל עצמך</h1>
+      <p>מדריך מעשי לשינוי ולהגשמת החלומות שלך</p>
+      <a href="#payment" class="cta-button">קנו עכשיו</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Product Description and USPs -->
+    <section id="description">
+      <h2>על הספר</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>תובנות מעוררות השראה</h3>
+          <p>הספר מציע תובנות עמוקות שמסייעות להבין את עצמך טוב יותר ולפרוץ את הגבולות הפנימיים.</p>
+        </div>
+        <div class="feature">
+          <h3>תרגילים וכלים מעשיים</h3>
+          <p>תמצאו בו תרגילים יישומיים וכלים פרקטיים שיעזרו לכם לבצע שינוי כבר מהעמוד הראשון.</p>
+        </div>
+        <div class="feature">
+          <h3>סיפורי השראה אמיתיים</h3>
+          <p>דוגמאות אמיתיות של אנשים שעשו את המסע – מה שמעניק השראה ומראה שזה אפשרי.</p>
+        </div>
+        <div class="feature">
+          <h3>מתאים לכל גיל ולכל שלב</h3>
+          <p>בין אם אתם בתחילת הדרך ובין אם כבר עשיתם כברת דרך – הספר ידבר אליכם.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About the Author -->
+    <section id="about">
+      <h2>על המחבר</h2>
+      <div class="about">
+        <img src="open_book.jpg" alt="מחבר הספר">
+        <div class="text">
+          <p>הספר נכתב על ידי יואב לוי, מרצה ומאמן אישי בעל ניסיון של למעלה מעשר שנים בליווי אנשים במסע האישי שלהם. יואב משלב ידע אקדמי עם ניסיון חיים כדי ליצור מדריך מעשי ומלא השראה.</p>
+          <p>במהלך השנים יואב עזר לאלפי אנשים לחולל שינוי בחייהם, וכעת הוא מציע את הכלים והתובנות שלו גם לכם.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video">
+      <h2>הצצה לספר</h2>
+      <div class="video-container">
+        <!-- Replace the src URL with your own video link -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <h2>מה אומרים הקוראים</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>"ספר שחולל מהפכה בחיי. מצאתי בו כלים שלא מצאתי בשום מקום אחר!"</p>
+          <span>– שרית, תל אביב</span>
+        </div>
+        <div class="testimonial">
+          <p>"הספר נגע בי עמוק, והוביל אותי להחלטות שקידמו אותי בכל תחומי החיים."</p>
+          <span>– דניאל, חיפה</span>
+        </div>
+        <div class="testimonial">
+          <p>"חייבים לקרוא! הספר הזה הוא מדריך אמיתי לחיים טובים יותר."</p>
+          <span>– מיכל, ירושלים</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing and Payment -->
+    <section id="pricing">
+      <h2>מחיר ומבצע</h2>
+      <div class="pricing">
+        <p class="price">89₪ בלבד</p>
+        <ul class="benefits">
+          <li>ספר מודפס באיכות גבוהה או ספר דיגיטלי לבחירתכם</li>
+          <li>גישה בלעדית לקבוצת פייסבוק סגורה לדיונים ושיתוף</li>
+          <li>בונוס: מדריך אודיו להקשבה בכל זמן</li>
+          <li>אחריות מלאה – החזר כספי תוך 14 יום למי שלא יתחבר לתוכן</li>
+        </ul>
+        <div class="payment-buttons" id="payment">
+          <!-- PayPal payment link button (replace the link with your PayPal payment link) -->
+          <a href="#" onclick="alert('יש להחליף קישור זה בקישור תשלום של PayPal.'); return false;">שלם עם PayPal</a>
+          <!-- Stripe/Apple Pay payment link (replace with your Stripe Payment Link) -->
+          <a href="#" onclick="alert('יש להחליף קישור זה בקישור תשלום של Stripe אשר תומך באפל פיי וכרטיסי אשראי.'); return false;">שלם בכרטיס אשראי / Apple Pay</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 יואב לוי. כל הזכויות שמורות.</p>
+    <p>אנא קראו את <a href="#" onclick="alert('הוסיפו קישור למסמך תנאי שימוש ומדיניות פרטיות.'); return false;">תנאי השימוש ומדיניות הפרטיות</a> לפני ביצוע רכישה.</p>
+  </footer>
+</body>
+</html>
